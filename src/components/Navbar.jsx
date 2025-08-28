@@ -4,7 +4,7 @@ const SmallNavbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-2 fixed top-0 flex items-center justify-between w-full">
+    <div className="p-2 fixed top-0 flex items-center justify-between w-full bg-black pt-4">
       <button
         onClick={() => setOpen(!open)}
         className="flex flex-col justify-between ml-2 w-7 h-5 focus:outline-none cursor-pointer relative z-50"
@@ -70,12 +70,12 @@ const SmallNavbar = () => {
 
 const MediumNavbar = () => {
   return (
-    <div className="w-full flex p-4 items-end gap-14">
+    <div className="w-full flex p-4 items-end gap-14 bg-black pt-4">
       <a href="#">
-        <h1 className="text-5xl font-bold">elliot</h1>
+        <h1 className="text-6xl font-bold">elliot</h1>
       </a>
       <div className="">
-        <ul className="flex gap-8 pb-2">
+        <ul className="flex gap-8 pb-2 text-2xl">
           <li>
             <a href="#">contact</a>
           </li>

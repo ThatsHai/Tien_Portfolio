@@ -1,12 +1,12 @@
+import { RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
+import CustomRouter from "./router/CustomRouter";
 
 function App() {
   return (
     <>
-      <div className="">
-        <Homepage></Homepage>
-      </div>
+      <RouterProvider router={CustomRouter}></RouterProvider>
     </>
   );
 }
