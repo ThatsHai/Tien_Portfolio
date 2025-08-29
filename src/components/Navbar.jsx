@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SmallNavbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-2 fixed top-0 flex items-center justify-between w-full">
+    <div className="p-2 fixed top-0 flex items-center justify-between w-full bg-black pt-4">
       <button
         onClick={() => setOpen(!open)}
         className="flex flex-col justify-between ml-2 w-7 h-5 focus:outline-none cursor-pointer relative z-50"
@@ -27,7 +28,9 @@ const SmallNavbar = () => {
         ${open ? "-rotate-45 -translate-y-2" : ""}`}
         ></span>
       </button>
-      <h1 className="text-2xl font-bold px-3 z-50">elliot</h1>
+      <Link className="text-2xl font-bold px-3 z-50" to={"/"}>
+        elliot
+      </Link>
       {/* Filter layer */}
       <div
         className={`fixed top-0 left-0 h-screen w-screen z-40 
@@ -37,7 +40,7 @@ const SmallNavbar = () => {
         <div className="">
           <ul className="flex flex-col gap-4 items-center justify-center h-screen">
             <li>
-              <a href="#">contact</a>
+              <Link to={"/contact"}>contact</Link>
             </li>
             <li>
               <a href="#">animation</a>
@@ -70,20 +73,20 @@ const SmallNavbar = () => {
 
 const MediumNavbar = () => {
   return (
-    <div className="w-full flex p-4 items-end gap-14">
-      <a href="#">
-        <h1 className="text-5xl font-bold">elliot</h1>
-      </a>
+    <div className="w-full flex p-4 items-end gap-14 bg-black pt-4">
+      <Link to={"/"}>
+        <h1 className="text-6xl font-bold">elliot</h1>
+      </Link>
       <div className="">
-        <ul className="flex gap-8 pb-2">
+        <ul className="flex gap-8 pb-2 text-2xl">
           <li>
-            <a href="#">contact</a>
+            <Link to={"/contact"} className="opacity-90 hover:opacity-100">contact</Link>
           </li>
           <li>
-            <a href="#">animation</a>
+            <a href="#" className="opacity-90 hover:opacity-100">animation</a>
           </li>
           <li>
-            <a href="#">illust</a>
+            <a href="#" className="opacity-90 hover:opacity-100">illust</a>
           </li>
         </ul>
       </div>
