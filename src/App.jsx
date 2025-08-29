@@ -6,7 +6,7 @@ import CustomRouter from "./router/CustomRouter";
 function App() {
   return (
     <>
-      <RouterProvider router={CustomRouter}></RouterProvider>
+      <RouterProvider router={CustomRouter} ></RouterProvider>
     </>
   );
 }

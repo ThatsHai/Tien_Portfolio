@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import { cancelRightClick } from "../utils/utilFunctions";
 // import placeholderImage from "../../public/imgs/topHomepage.png";
 // import placeholderImage2 from "../../public/imgs/middleHomepage.png";
 // import placeholderImage3 from "../../public/imgs/bottomHomepage.png";
@@ -22,6 +23,7 @@ const SmallHomepageImagesDisplay = () => {
                 src={placeholderImage}
                 alt="animation demo"
                 className="max-w-full max-h-[80vh] object-contain"
+                onContextMenu={cancelRightClick}
               />
               <p className="bg-black text-white mt-4 text-lg">
                 ANIMATED PROJECTS
@@ -37,19 +39,21 @@ const SmallHomepageImagesDisplay = () => {
                 src={placeholderImage2}
                 alt="illustration demo"
                 className="max-w-full max-h-[80vh] object-contain"
+                onContextMenu={cancelRightClick}
               />
               <p className="bg-black text-white mt-4 text-lg">ILLUSTRATION</p>
             </div>
           </li>
         </Link>
 
-        <Link to={"/contact"}>
+        <Link to={"/Tien_Portfolio/contact"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
               <img
                 src={placeholderImage3}
                 alt="contact"
                 className="max-w-full max-h-[80vh] object-contain"
+                onContextMenu={cancelRightClick}
               />
               <p className="bg-black text-white mt-4 text-lg">CONTACT</p>
             </div>
@@ -63,36 +67,52 @@ const SmallHomepageImagesDisplay = () => {
 const MediumHomepageImagesDisplay = () => {
   return (
     <div className="flex justify-center align-center w-full">
-      <div className="grid grid-cols-3 gap-6 bg-black justify-center items-center pt-2 px-2">
+      <div className="grid grid-cols-3 gap-6 bg-black justify-center items-center pt-2 px-6 w-full">
         <Link
           to={"/animation"}
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
-          <img
-            src={placeholderImage}
-            alt="animation demo"
-            className="max-w-full max-h-[80vh] object-contain"
-          />
+          <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
+            <img
+              src={placeholderImage}
+              alt="animation demo"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+              onContextMenu={cancelRightClick}
+            />
+          </div>
         </Link>
+
         <Link
           to={"/illust"}
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
-          <img
-            src={placeholderImage2}
-            alt="illustration demo"
-            className="max-w-full max-h-[80vh] object-contain"
-          />
+          <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
+            <img
+              src={placeholderImage2}
+              alt="illustration demo"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+              onContextMenu={cancelRightClick}
+            />
+          </div>
         </Link>
         <Link
-          to={"/contact"}
+          to={"/Tien_Portfolio/contact"}
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
-          <img
-            src={placeholderImage3}
-            alt="contact"
-            className="max-w-full max-h-[80vh] object-contain"
-          />
+          <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
+            <img
+              src={placeholderImage3}
+              alt="contact"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+              onContextMenu={cancelRightClick}
+            />
+          </div>
         </Link>
         <Link to={"/animation"}>
           <p className="bg-black text-white mt-4 text-2xl font-bold text-center">

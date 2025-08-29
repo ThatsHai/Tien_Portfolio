@@ -5,6 +5,8 @@
   --color-defaultBlue: #19499D;
   --color-defaultBrown: #4B3A32;
   --color-defaultYellow: #FFF8BA;
+  --color-defaultPink: #dd7373;
+  --color-defaultRed: #8c001a;
 }
 
 .no-scrollbar::-webkit-scrollbar {

@@ -6,7 +6,7 @@ const RootLayout = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-black">
+      <main className="bg-black px-4">
         <Outlet /> {/* child routes will render here */}
       </main>
     </>
