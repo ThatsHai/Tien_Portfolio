@@ -5,7 +5,7 @@ const SmallNavbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-2 fixed top-0 flex items-center justify-between w-full bg-black pt-4">
+    <div className="p-2 fixed top-0 left-0 flex items-center justify-between w-full bg-black pt-4 z-50">
       <button
         onClick={() => setOpen(!open)}
         className="flex flex-col justify-between ml-2 w-7 h-5 focus:outline-none cursor-pointer relative z-50"
@@ -43,10 +43,10 @@ const SmallNavbar = () => {
               <Link to={"/contact"}>contact</Link>
             </li>
             <li>
-              <a href="#">animation</a>
+              <Link to={"/"}>animation</Link>
             </li>
             <li>
-              <a href="#">illust</a>
+              <Link to={"/illust"}>illust</Link>
             </li>
             <li className="pt-2">
               <svg
@@ -73,6 +73,8 @@ const SmallNavbar = () => {
 
 const MediumNavbar = () => {
   return (
+    // <div className="w-full fixed bottom-0 left-0 flex p-4 items-end gap-14 bg-black z-50">
+
     <div className="w-full flex p-4 items-end gap-14 bg-black pt-4">
       <Link to={"/"}>
         <h1 className="text-6xl font-bold">elliot</h1>
@@ -80,13 +82,19 @@ const MediumNavbar = () => {
       <div className="">
         <ul className="flex gap-8 pb-2 text-2xl">
           <li>
-            <Link to={"/contact"} className="opacity-90 hover:opacity-100">contact</Link>
+            <Link to={"/contact"} className="opacity-90 hover:opacity-100">
+              contact
+            </Link>
           </li>
           <li>
-            <a href="#" className="opacity-90 hover:opacity-100">animation</a>
+            <Link to={"/"} className="opacity-90 hover:opacity-100">
+              animation
+            </Link>
           </li>
           <li>
-            <a href="#" className="opacity-90 hover:opacity-100">illust</a>
+            <Link to={"/illust"} className="opacity-90 hover:opacity-100">
+              illust
+            </Link>
           </li>
         </ul>
       </div>

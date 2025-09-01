@@ -46,7 +46,7 @@ const SmallHomepageImagesDisplay = () => {
           </li>
         </Link>
 
-        <Link to={"/Tien_Portfolio/contact"}>
+        <Link to={"/contact"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
               <img
@@ -100,7 +100,7 @@ const MediumHomepageImagesDisplay = () => {
           </div>
         </Link>
         <Link
-          to={"/Tien_Portfolio/contact"}
+          to={"/contact"}
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
           <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
