@@ -4,21 +4,20 @@ import { cancelRightClick } from "../utils/utilFunctions";
 // import placeholderImage from "../../public/imgs/raccoon matcha4.png";
 import placeholderImage from "/imgs/raccoon matcha4.png";
 
-const email = "This is where I would put my email";
-const greetings = "This is where I would put my greetings";
-const jobs = "This is where I would put my jobs";
+const email = "dkhiemvn.04@gmail.com";
+const greetings = `I’m Đông Khiêm Elliot, an undergraduate Multimedia Communications student from Cần Thơ, Việt Nam.
+I’m exploring 2D & 3D animation, illustration, and branding.
+This portfolio gathers my works.`;
+const jobs = "✨ Open for collaborations and opportunities!";
 const media = {
-  Twitter: "https://www.google.com/",
-  Instagram: "https://www.google.com/",
-  BlueSky: "https://www.google.com/",
+  Facebook: "https://www.facebook.com/quynh.tien.338608/",
+  Youtube: "https://www.youtube.com/@elliotnormalcy",
+  Behance: "elliotnormalcyzzz",
+  Instagram: "elliotnormalcyzzz",
 };
 
 const goToLink = (value) => {
   window.open(value, "_blank");
-};
-
-const SmallContactPage = () => {
-  return "kjdfjkef";
 };
 
 const MediumContactPage = () => {
@@ -32,17 +31,22 @@ const MediumContactPage = () => {
           onContextMenu={cancelRightClick}
         />
         <div className="col-span-2 grid grid-cols-1 gap-6 pt-6 md:pt-0">
-          <h2 className="text-4xl font-semibold">elliot</h2>
+          <h2 className="text-4xl font-semibold">Đông Khiêm Elliot</h2>
           <h3 className="text-xl font-bold underline">{email}</h3>
-          <h4>{greetings}</h4>
+          <h4 className="md:w-3/4">{greetings}</h4>
           <h4>{jobs}</h4>
           <div className="grid grid-cols-1 gap-1">
             {Object.entries(media).map(([key, value]) => {
+              const isUpdating = value === "elliotnormalcyzzz";
               return (
                 <p key={key}>
                   {key}:{" "}
                   <span className="text-defaultPink hover:text-defaultRed">
-                    <button onClick={() => goToLink(value)}>@elliot</button>
+                    {isUpdating ? (
+                      <span className="italic text-gray-400">updating…</span>
+                    ) : (
+                      <button onClick={() => goToLink(value)}>@elliot</button>
+                    )}
                   </span>
                 </p>
               );
@@ -57,9 +61,6 @@ const MediumContactPage = () => {
 const ContactPage = () => {
   return (
     <div className="text-white font-montserrat">
-      <div className="md:hidden">
-        <SmallContactPage></SmallContactPage>
-      </div>
       <div className="">
         <MediumContactPage></MediumContactPage>
       </div>

@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import Homepage from "../pages/Homepage";
 import ContactPage from "../pages/ContactPage";
+import IllustsPage from "../pages/IllustsPage";
+import ProjectPage from "../pages/ProjectPage";
+import Latibude from "../pages/projects/Latibude";
 
 function Home() {
   return <h1>Home Page</h1>;
@@ -16,17 +19,20 @@ function Projects() {
 const CustomRouter = createBrowserRouter(
   [
     {
-      path: "/", 
+      path: "/",
       element: <RootLayout />,
       children: [
         { index: true, element: <Homepage /> },
         { path: "contact", element: <ContactPage /> },
-        { path: "projects", element: <Projects /> }, 
+        { path: "projects", element: <Projects /> },
+        { path: "illust", element: <IllustsPage /> },
+        { path: "project", element: <ProjectPage /> },
+        { path: "latibude", element: <Latibude /> },
       ],
     },
   ],
   {
-    basename: import.meta.env.BASE_URL, 
+    basename: import.meta.env.BASE_URL,
   }
 );
 

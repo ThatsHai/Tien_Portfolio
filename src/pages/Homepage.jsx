@@ -46,16 +46,16 @@ const SmallHomepageImagesDisplay = () => {
           </li>
         </Link>
 
-        <Link to={"/Tien_Portfolio/contact"}>
+        <Link to={"/project"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
               <img
                 src={placeholderImage3}
-                alt="contact"
+                alt="project"
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
               />
-              <p className="bg-black text-white mt-4 text-lg">CONTACT</p>
+              <p className="bg-black text-white mt-4 text-lg">PROJECT</p>
             </div>
           </li>
         </Link>
@@ -100,13 +100,13 @@ const MediumHomepageImagesDisplay = () => {
           </div>
         </Link>
         <Link
-          to={"/Tien_Portfolio/contact"}
+          to={"/project"}
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
           <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
             <img
               src={placeholderImage3}
-              alt="contact"
+              alt="project"
               className="max-w-full max-h-[80vh] object-contain
                 transition-transform duration-500 ease-in-out 
                 hover:scale-120"
@@ -124,9 +124,9 @@ const MediumHomepageImagesDisplay = () => {
             ILLUSTRATION
           </p>
         </Link>
-        <Link to={"/illust"}>
+        <Link to={"/project"}>
           <p className="bg-black text-white mt-4 text-2xl font-bold text-center">
-            CONTACT
+            PROJECT
           </p>
         </Link>
       </div>
