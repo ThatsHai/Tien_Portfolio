@@ -3,6 +3,8 @@ import RootLayout from "../layouts/RootLayout";
 import Homepage from "../pages/Homepage";
 import ContactPage from "../pages/ContactPage";
 import IllustsPage from "../pages/IllustsPage";
+import ProjectPage from "../pages/ProjectPage";
+import Latibude from "../pages/projects/Latibude";
 
 function Home() {
   return <h1>Home Page</h1>;
@@ -24,6 +26,8 @@ const CustomRouter = createBrowserRouter(
         { path: "contact", element: <ContactPage /> },
         { path: "projects", element: <Projects /> },
         { path: "illust", element: <IllustsPage /> },
+        { path: "project", element: <ProjectPage /> },
+        { path: "latibude", element: <Latibude /> },
       ],
     },
   ],

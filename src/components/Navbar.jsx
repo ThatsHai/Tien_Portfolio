@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SmallNavbar = () => {
+const links = [
+  { name: "contact", to: "/contact" },
+  { name: "animation", to: "/" },
+  { name: "illust", to: "/illust" },
+  { name: "project", to: "/project" },
+];
+
+const SmallNavbar = ({ setActive }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -37,17 +44,23 @@ const SmallNavbar = () => {
               bg-black/50 transition-opacity duration-300
               ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
-        <div className="">
+        <div>
           <ul className="flex flex-col gap-4 items-center justify-center h-screen">
-            <li>
-              <Link to={"/contact"}>contact</Link>
-            </li>
-            <li>
-              <Link to={"/"}>animation</Link>
-            </li>
-            <li>
-              <Link to={"/illust"}>illust</Link>
-            </li>
+            {links.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  onClick={() => {
+                    setOpen(false);
+                    setActive(link.to);
+                  }}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+
+            {/* the extra svg button */}
             <li className="pt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,31 +84,27 @@ const SmallNavbar = () => {
   );
 };
 
-const MediumNavbar = () => {
+const MediumNavbar = ({ active, setActive }) => {
   return (
-    // <div className="w-full fixed bottom-0 left-0 flex p-4 items-end gap-14 bg-black z-50">
-
     <div className="w-full flex p-4 items-end gap-14 bg-black pt-4">
       <Link to={"/"}>
         <h1 className="text-6xl font-bold">elliot</h1>
       </Link>
-      <div className="">
+      <div>
         <ul className="flex gap-8 pb-2 text-2xl">
-          <li>
-            <Link to={"/contact"} className="opacity-90 hover:opacity-100">
-              contact
-            </Link>
-          </li>
-          <li>
-            <Link to={"/"} className="opacity-90 hover:opacity-100">
-              animation
-            </Link>
-          </li>
-          <li>
-            <Link to={"/illust"} className="opacity-90 hover:opacity-100">
-              illust
-            </Link>
-          </li>
+          {links.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                onClick={() => setActive(link.to)}
+                className={`opacity-90 hover:opacity-100 ${
+                  active === link.to ? "text-yellow-600 " : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -103,15 +112,15 @@ const MediumNavbar = () => {
 };
 
 const Navbar = () => {
-  // const [openSmallNavbar, setOpenSmallNavbar] = useState(false);
+  const [active, setActive] = useState("");
 
   return (
     <div className="text-white font-montserrat">
       <div className="md:block hidden">
-        <MediumNavbar></MediumNavbar>
+        <MediumNavbar active={active} setActive={setActive}></MediumNavbar>
       </div>
       <div className="md:hidden">
-        <SmallNavbar></SmallNavbar>
+        <SmallNavbar setActive={setActive}></SmallNavbar>
       </div>
     </div>
   );
