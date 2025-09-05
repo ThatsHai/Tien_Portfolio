@@ -4,7 +4,8 @@ import Homepage from "../pages/Homepage";
 import ContactPage from "../pages/ContactPage";
 import IllustsPage from "../pages/IllustsPage";
 import ProjectPage from "../pages/ProjectPage";
-import Latibude from "../pages/projects/Latibude";
+import Latibule from "../pages/projects/Latibule/Latibule";
+import Learcult from "../pages/projects/Learcult/Learcult";
 
 function Home() {
   return <h1>Home Page</h1>;
@@ -27,7 +28,8 @@ const CustomRouter = createBrowserRouter(
         { path: "projects", element: <Projects /> },
         { path: "illust", element: <IllustsPage /> },
         { path: "project", element: <ProjectPage /> },
-        { path: "latibude", element: <Latibude /> },
+        { path: "latibule", element: <Latibule /> },
+        { path: "learcult", element: <Learcult /> },
       ],
     },
   ],

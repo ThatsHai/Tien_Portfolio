@@ -25,3 +25,16 @@ html {
 p, h1, h2, h3, h4, h5 {
   cursor: pointer;
 } */
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}

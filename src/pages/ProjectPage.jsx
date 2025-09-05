@@ -1,21 +1,27 @@
 import React from "react";
 import { cancelRightClick } from "../utils/utilFunctions";
 
-import LatibudeProject from "../../public/imgs/ProjectCovers/Latibule Project.png";
+import LatibuleProject from "/imgs/ProjectCovers/Latibule Project.png";
+import LearcultProject from "/imgs/ProjectCovers/Learcult Project.png"
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Pass images with known width/height (or any aspect ratio numbers).
- * If you only have URLs, you can prefetch natural sizes once and cache them.
- */
 const sampleImages = [
   {
-    src: LatibudeProject,
+    src: LatibuleProject,
     w: 526,
     h: 526,
+    url: "latibule",
+    text: "Latibule Season 3",
   },
+  {
+    src: LearcultProject,
+    w:526,
+    h:526,
+    url: "learcult",
+    text: "Learcult"
+  }
 ];
 
 const ImageReview = ({ image, setOpenReviewImage }) => {
@@ -58,8 +64,6 @@ const ProjectPage = ({
 }) => {
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
-  const [openReviewImage, setOpenReviewImage] = useState(false);
-  const [selectedImage, setSelectedImage] = useState();
 
   // Observe container width so the layout adapts on resize
   useEffect(() => {
@@ -121,12 +125,6 @@ const ProjectPage = ({
 
   return (
     <div ref={containerRef} className="w-full pt-16 md:pt-0 z-0">
-      {openReviewImage && (
-        <ImageReview
-          setOpenReviewImage={setOpenReviewImage}
-          image={selectedImage}
-        ></ImageReview>
-      )}
       {/* Optional top/bottom padding */}
       <div className="flex flex-col gap-1">
         {rows.map((r, ri) => (
@@ -141,20 +139,29 @@ const ProjectPage = ({
                 className="overflow-hidden flex items-center justify-center rounded"
                 style={{ width: `${img.width}px`, height: `${img.height}px` }}
               >
-                <Link to={"/latibude"}>
-                  <img
-                    src={img.src}
-                    alt={`img-${ri}-${i}`}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
-                    onContextMenu={cancelRightClick}
-                    draggable={false}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = `scale(${zoomScale})`)
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                  />
+                <Link to={`/${img.url}`}>
+                  <div className="relative group w-full h-full overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={`img-${ri}-${i}`}
+                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
+                      onContextMenu={cancelRightClick}
+                      draggable={false}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.transform = `scale(${zoomScale})`)
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
+                    />
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <p className="text-white text-lg font-semibold">
+                        {img.text}
+                      </p>
+                    </div>
+                  </div>
                 </Link>
               </div>
             ))}

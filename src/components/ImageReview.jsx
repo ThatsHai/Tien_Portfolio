@@ -31,6 +31,7 @@ const ImageReview = ({ image, setOpenReviewImage }) => {
         className="max-h-[90vh] max-w-[90vw] object-contain"
         alt="preview"
         onContextMenu={cancelRightClick}
+        draggable="false"
       />
     </div>
   );

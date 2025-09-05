@@ -113,7 +113,6 @@ const MediumNavbar = ({ active, setActive }) => {
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-
   return (
     <div className="text-white font-montserrat">
       <div className="md:block hidden">

@@ -41,7 +41,7 @@ const SmallHomepageImagesDisplay = () => {
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
               />
-              <p className="bg-black text-white mt-4 text-lg">ILLUSTRATION</p>
+              <p className="bg-black text-white mt-4 text-lg">ILLUSTRATIONS</p>
             </div>
           </li>
         </Link>
@@ -55,7 +55,7 @@ const SmallHomepageImagesDisplay = () => {
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
               />
-              <p className="bg-black text-white mt-4 text-lg">PROJECT</p>
+              <p className="bg-black text-white mt-4 text-lg">PROJECTS</p>
             </div>
           </li>
         </Link>
@@ -121,12 +121,12 @@ const MediumHomepageImagesDisplay = () => {
         </Link>
         <Link to={"/illust"}>
           <p className="bg-black text-white mt-4 text-2xl font-bold text-center">
-            ILLUSTRATION
+            ILLUSTRATIONS
           </p>
         </Link>
         <Link to={"/project"}>
           <p className="bg-black text-white mt-4 text-2xl font-bold text-center">
-            PROJECT
+            PROJECTS
           </p>
         </Link>
       </div>
