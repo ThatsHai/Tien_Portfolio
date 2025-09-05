@@ -21,6 +21,7 @@ const ImageWithSkeleton = ({ src, alt, className, onClick = () => {} }) => {
           loaded ? "opacity-100" : "opacity-0"
         } ${className}`}
         onContextMenu={cancelRightClick}
+        draggable="false"
       />
     </div>
   );

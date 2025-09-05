@@ -9,7 +9,7 @@ export const LeftNote = ({ text }) => {
 };
 
 export const MidNote = ({ text }) => {
-  return <div className="text-lg w-full text-center p-2">{text}</div>;
+  return <div className="text-lg w-full text-center p-2 font-semibold ">{text}</div>;
 };
 
 export const ProjectName = ({ text }) => {
