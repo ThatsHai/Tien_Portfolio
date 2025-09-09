@@ -8,6 +8,7 @@ import { cancelRightClick } from "../utils/utilFunctions";
 import placeholderImage from "/imgs/Bài thi vòng 3.png";
 import placeholderImage2 from "/imgs/Touka Miyashita - boogiepop.png";
 import placeholderImage3 from "/imgs/OC- Thiên Thanh.png";
+import ImageWithSkeleton from "../components/ImageWithSkeleton";
 
 //url: /animation, /illust, /contact
 
@@ -19,12 +20,17 @@ const SmallHomepageImagesDisplay = () => {
         <Link to={"/animation"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
-              <img
+              {/* <img
                 src={placeholderImage}
                 alt="animation demo"
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
-              />
+              /> */}
+              <ImageWithSkeleton
+                src={placeholderImage}
+                alt="animation demo"
+                className="max-w-full max-h-[80vh] object-contain"
+              ></ImageWithSkeleton>
               <p className="bg-black text-white mt-4 text-lg">
                 ANIMATED PROJECTS
               </p>
@@ -35,12 +41,17 @@ const SmallHomepageImagesDisplay = () => {
         <Link to={"/illust"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
-              <img
+              {/* <img
                 src={placeholderImage2}
                 alt="illustration demo"
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
-              />
+              /> */}
+              <ImageWithSkeleton
+                src={placeholderImage2}
+                alt="illustration demo"
+                className="max-w-full max-h-[80vh] object-contain"
+              ></ImageWithSkeleton>
               <p className="bg-black text-white mt-4 text-lg">ILLUSTRATIONS</p>
             </div>
           </li>
@@ -49,12 +60,17 @@ const SmallHomepageImagesDisplay = () => {
         <Link to={"/project"}>
           <li className="flex items-center justify-center w-full h-screen snap-start cursor-pointer">
             <div className="flex flex-col items-center justify-center bg-black w-full h-full">
-              <img
+              {/* <img
                 src={placeholderImage3}
                 alt="project"
                 className="max-w-full max-h-[80vh] object-contain"
                 onContextMenu={cancelRightClick}
-              />
+              /> */}
+              <ImageWithSkeleton
+                src={placeholderImage3}
+                alt="project"
+                className="max-w-full max-h-[80vh] object-contain"
+              ></ImageWithSkeleton>
               <p className="bg-black text-white mt-4 text-lg">PROJECTS</p>
             </div>
           </li>
@@ -73,14 +89,21 @@ const MediumHomepageImagesDisplay = () => {
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
           <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
-            <img
+            {/* <img
               src={placeholderImage}
               alt="animation demo"
               className="max-w-full max-h-[80vh] object-contain
                 transition-transform duration-500 ease-in-out 
                 hover:scale-120"
               onContextMenu={cancelRightClick}
-            />
+            /> */}
+            <ImageWithSkeleton
+              src={placeholderImage}
+              alt="animation demo"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+            ></ImageWithSkeleton>
           </div>
         </Link>
 
@@ -89,14 +112,21 @@ const MediumHomepageImagesDisplay = () => {
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
           <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
-            <img
+            {/* <img
               src={placeholderImage2}
               alt="illustration demo"
               className="max-w-full max-h-[80vh] object-contain
                 transition-transform duration-500 ease-in-out 
                 hover:scale-120"
               onContextMenu={cancelRightClick}
-            />
+            /> */}
+            <ImageWithSkeleton
+              src={placeholderImage2}
+              alt="illustration demo"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+            ></ImageWithSkeleton>
           </div>
         </Link>
         <Link
@@ -104,14 +134,21 @@ const MediumHomepageImagesDisplay = () => {
           className="flex flex-col items-center justify-center bg-black w-full h-full"
         >
           <div className="overflow-hidden max-w-full max-h-[80vh] flex items-center justify-center">
-            <img
+            {/* <img
               src={placeholderImage3}
               alt="project"
               className="max-w-full max-h-[80vh] object-contain
                 transition-transform duration-500 ease-in-out 
                 hover:scale-120"
               onContextMenu={cancelRightClick}
-            />
+            /> */}
+            <ImageWithSkeleton
+              src={placeholderImage3}
+              alt="project"
+              className="max-w-full max-h-[80vh] object-contain
+                transition-transform duration-500 ease-in-out 
+                hover:scale-120"
+            ></ImageWithSkeleton>
           </div>
         </Link>
         <Link to={"/animation"}>

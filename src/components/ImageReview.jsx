@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { cancelRightClick } from "../utils/utilFunctions";
 
 // Modal for viewing image
-const ImageReview = ({ image, setOpenReviewImage }) => {
+const ImageReview = ({ image, setOpenReviewImage, description }) => {
   useEffect(() => {
     function handleKeyDown(e) {
       if (e.key === "Escape") {
@@ -14,10 +14,11 @@ const ImageReview = ({ image, setOpenReviewImage }) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [setOpenReviewImage]);
+
   return (
     <div
       className="fixed top-0 left-0 h-screen w-screen z-40 
-              bg-black/70 flex items-center justify-center"
+              bg-black/70 flex items-center justify-center flex-col"
     >
       <button
         onClick={() => setOpenReviewImage(false)}
@@ -33,6 +34,7 @@ const ImageReview = ({ image, setOpenReviewImage }) => {
         onContextMenu={cancelRightClick}
         draggable="false"
       />
+      {description && <p className="text-white">{description}</p>}
     </div>
   );
 };
