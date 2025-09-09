@@ -1,30 +1,19 @@
-import React from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import { cancelRightClick } from "../utils/utilFunctions";
-
-import LatibuleProject from "/imgs/ProjectCovers/Latibule Project.png";
-import LearcultProject from "/imgs/ProjectCovers/Learcult Project.png"
-
-import { useEffect, useMemo, useRef, useState } from "react";
+import IntroductoryTermPaper from "./animation/IntroductoryTermPaper/cover.jpg"
 import { Link } from "react-router-dom";
 
 const sampleImages = [
   {
-    src: LatibuleProject,
-    w: 526,
-    h: 526,
-    url: "latibule",
-    text: "Latibule Season 3",
+    src: IntroductoryTermPaper,
+    w: 1920,
+    h: 1080,
+    url: "fundamentalTopics",
+    text: "Fundamental Topic",
   },
-  {
-    src: LearcultProject,
-    w:526,
-    h:526,
-    url: "learcult",
-    text: "Learcult"
-  }
 ];
 
-const ProjectPage = ({
+const AnimationPage = ({
   images = sampleImages,
   rowHeight = 400, // target row height in px
   gap = 4, // gap between items in px
@@ -140,4 +129,4 @@ const ProjectPage = ({
   );
 };
 
-export default ProjectPage;
+export default AnimationPage;

@@ -6,7 +6,7 @@ import {
   MidNote,
   LeftNote,
 } from "../ProjectCredit";
-import ImageWithSkeleton from "../ImageWithSkeleton";
+import ImageWithSkeleton from "../../../components/ImageWithSkeleton";
 import ImageReview from "../../../components/ImageReview";
 import avatarFrame from "./avatarFrame.png";
 import avatarFrame2 from "./avatarFrame2.png";

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const ProjectCredit = ({ text }) => {
-  return <div className="text-center text-xl pt-2">{text}</div>;
+  return <div className="text-sm md:text-lg text-center py-4 px-10">{text}</div>;
 };
 
 export const LeftNote = ({ text }) => {

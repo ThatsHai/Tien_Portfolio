@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cancelRightClick } from "../../utils/utilFunctions";
+import { cancelRightClick } from "../utils/utilFunctions";
 
 const Skeleton = ({ className }) => {
   return <div className={`animate-pulse bg-gray-300 rounded ${className}`} />;

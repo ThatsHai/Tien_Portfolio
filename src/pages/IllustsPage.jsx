@@ -1,21 +1,10 @@
 import React from "react";
-import { cancelRightClick } from "../utils/utilFunctions";
-
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import ImageReview from "../components/ImageReview";
+import ImageWithSkeleton from "../components/ImageWithSkeleton";
 
-/**
- * Pass images with known width/height (or any aspect ratio numbers).
- * If you only have URLs, you can prefetch natural sizes once and cache them.
- */
-const sampleImages = [
-  {
-    src: "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/482002391_122124818744630242_4907749109270160462_n.png?stp=dst-png_s960x960&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Frpvv9oKJ_EQ7kNvwEu31pd&_nc_oc=AdlXvhfzOT3If0AXW76YpPrNUuDmdgKH9IUTW757i7xCAb_MtZtL_BHeQKFWeiQTF-I&_nc_zt=23&_nc_ht=scontent.fsgn5-9.fna&_nc_gid=sVtIhPC-JRBWxdCT0sW_Jw&oh=00_AfbySilX5sGh9M3mLcLtcHX1dkc6HA5CPGXJs6d0l-n30w&oe=68BF0DA8",
-    w: 2000,
-    h: 700,
-  },
-];
+import { sampleImages } from "./illusts/ImagesIndex";
 
 // const ImageReview = ({ image, setOpenReviewImage }) => {
 //   return (
@@ -48,7 +37,7 @@ const sampleImages = [
 
 const IllustsPage = ({
   images = sampleImages,
-  rowHeight = 700, // target row height in px
+  rowHeight = 400, // target row height in px
   gap = 4, // gap between items in px
   zoomScale = 1.1, // hover zoom
 }) => {
@@ -150,11 +139,12 @@ const IllustsPage = ({
   };
 
   return (
-    <div ref={containerRef} className="w-full pt-16 md:pt-0 z-0">
+    <div ref={containerRef} className="w-full pt-16 md:pt-0 z-0 mb-2">
       {openReviewImage && (
         <ImageReview
           setOpenReviewImage={setOpenReviewImage}
           image={selectedImage}
+          description={selectedImage.description}
         ></ImageReview>
       )}
       {/* Optional top/bottom padding */}
@@ -171,7 +161,7 @@ const IllustsPage = ({
                 className="overflow-hidden flex items-center justify-center rounded"
                 style={{ width: `${img.width}px`, height: `${img.height}px` }}
               >
-                <img
+                {/* <img
                   src={img.src}
                   alt={`img-${ri}-${i}`}
                   className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
@@ -185,7 +175,16 @@ const IllustsPage = ({
                   onContextMenu={cancelRightClick}
                   draggable={false}
                   onClick={() => handleSelectImage(img)}
-                />
+                /> */}
+                <ImageWithSkeleton
+                  src={img.src}
+                  alt={`img-${ri}-${i}`}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
+                  onClick={() => {
+                    handleSelectImage(img);
+                    console.log(img);
+                  }}
+                ></ImageWithSkeleton>
               </div>
             ))}
           </div>
