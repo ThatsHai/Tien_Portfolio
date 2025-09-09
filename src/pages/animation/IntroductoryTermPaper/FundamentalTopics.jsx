@@ -49,22 +49,11 @@ const FundamentalTopics = () => {
 
         {/* Image gallery */}
         <div className="flex items-stretch gap-1 justify-center">
-          <div className="flex items-stretch gap-1 justify-center">
-            <div className="hidden md:block bg-[#38386A] rounded-md p-2">
+          <div className="bg-[#38386A] rounded-md p-2 w-full max-w-[840px]">
+            <div className="relative w-full aspect-video">
               <iframe
-                width="840"
-                height="471"
-                src="https://www.youtube.com/embed/xIuGfdneQBU?rel=0"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="md:hidden bg-[#38386A] rounded-md p-2 inline-block">
-              <iframe
-                width="280"
-                height="157"
-                src="https://www.youtube.com/embed/xIuGfdneQBU"
+                className="absolute top-0 left-0 w-full h-full rounded-md"
+                src="https://www.youtube.com/embed/xIuGfdneQBU?rel=0&modestbranding=1"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
