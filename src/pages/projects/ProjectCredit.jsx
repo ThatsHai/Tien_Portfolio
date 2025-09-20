@@ -1,15 +1,24 @@
 import React from "react";
 
 export const ProjectCredit = ({ text }) => {
-  return <div className="text-sm md:text-lg text-center py-4 px-10">{text}</div>;
+  return (
+    <div className="text-sm md:text-lg text-center py-4 px-10">{text}</div>
+  );
 };
 
 export const LeftNote = ({ text }) => {
   return <div className="text-md pt-2">{text}</div>;
 };
 
-export const MidNote = ({ text }) => {
-  return <div className="text-lg w-full text-center p-2 font-semibold ">{text}</div>;
+export const MidNote = ({ text, textColor = "#FFF" }) => {
+  return (
+    <div
+      className="text-lg w-full text-center p-2 font-semibold "
+      style={{ color: textColor }}
+    >
+      {text}
+    </div>
+  );
 };
 
 export const ProjectName = ({ text }) => {
