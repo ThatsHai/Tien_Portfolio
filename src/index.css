@@ -38,3 +38,74 @@ p, h1, h2, h3, h4, h5 {
 .animate-floating {
   animation: floating 3s ease-in-out infinite;
 }
+
+/* Slide + fade CSS animations */
+
+.slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideInRight 0.5s forwards;
+}
+
+.slide-in-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slide-out-left {
+  transform: translateX(0%);
+  opacity: 1;
+  animation: slideOutLeft 0.5s forwards;
+}
+
+.slide-out-right {
+  transform: translateX(0%);
+  opacity: 1;
+  animation: slideOutRight 0.5s forwards;
+}
+
+/* Keyframes */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

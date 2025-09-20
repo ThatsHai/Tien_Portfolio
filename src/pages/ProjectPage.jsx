@@ -2,7 +2,8 @@ import React from "react";
 import { cancelRightClick } from "../utils/utilFunctions";
 
 import LatibuleProject from "/imgs/ProjectCovers/Latibule Project.png";
-import LearcultProject from "/imgs/ProjectCovers/Learcult Project.png"
+import LearcultProject from "/imgs/ProjectCovers/Learcult Project.png";
+import placeholder_image from "/imgs/ProjectCovers/placeholder_image.jpg";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -17,11 +18,18 @@ const sampleImages = [
   },
   {
     src: LearcultProject,
-    w:526,
-    h:526,
+    w: 1280,
+    h: 1280,
     url: "learcult",
-    text: "Learcult"
-  }
+    text: "Learcult",
+  },
+  {
+    src: placeholder_image,
+    w: 400,
+    h: 400,
+    url: "uniProjects",
+    text: "University Projects",
+  },
 ];
 
 const ProjectPage = ({

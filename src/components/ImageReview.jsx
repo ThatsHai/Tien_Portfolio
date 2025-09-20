@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { cancelRightClick } from "../utils/utilFunctions";
 
 // Modal for viewing image
-const ImageReview = ({ image, setOpenReviewImage, description }) => {
+const ImageReview = ({ image, setOpenReviewImage, description, buttonColor = "#FFF" }) => {
   useEffect(() => {
     function handleKeyDown(e) {
       if (e.key === "Escape") {
@@ -24,8 +24,14 @@ const ImageReview = ({ image, setOpenReviewImage, description }) => {
         onClick={() => setOpenReviewImage(false)}
         className="absolute right-4 top-4 flex flex-col justify-center items-center w-8 h-8 group cursor-pointer translate-y-16 md:-translate-x-7 md:translate-y-0"
       >
-        <span className="block h-1 w-full bg-white rounded rotate-45 translate-y-1"></span>
-        <span className="block h-1 w-full bg-white rounded -rotate-45"></span>
+        <span
+          className="block h-1 w-full rounded rotate-45 translate-y-1"
+          style={{ backgroundColor: buttonColor }}
+        ></span>
+        <span
+          className="block h-1 w-full rounded -rotate-45"
+          style={{ backgroundColor: buttonColor }}
+        ></span>
       </button>
       <img
         src={image?.src}

@@ -30,6 +30,18 @@ const introduction =
 const contribution =
   "* Head of Design. I created all of the following illustrations.";
 
+const ArrowButton = () => {
+  const handleClick = () => {
+    window.open('https://www.facebook.com/profile.php?id=61555836571751', '_blank');
+  };
+
+  return (
+    <button className="flex items-end px-4 border-2 text-defaultYellow rounded-full transition-all duration-300 hover:text-defaultGreen hover:bg-defaultYellow mb-1 cursor-pointer" onClick={handleClick}>
+      <span className="text-lg">→</span>
+    </button>
+  );
+};
+
 const Learcult = () => {
   const [openReviewImage, setOpenReviewImage] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -75,7 +87,10 @@ const Learcult = () => {
         className="fixed w-16 md:w-36 bottom-4 right-8 animate-floating"
         draggable="false"
       />
-      <ProjectName text={projectName}></ProjectName>
+      <div className="flex items-end justify-center w-full gap-4">
+        <ProjectName text={projectName}></ProjectName>
+        <ArrowButton></ArrowButton>
+      </div>
       <ProjectCredit text={introduction}></ProjectCredit>
       <p className="text-center text-sm italic">{contribution}</p>
       <div className="py-8">
@@ -156,10 +171,7 @@ const Learcult = () => {
               />
             </div>
 
-            {[
-              side1_ss2,
-              pin_cam2,
-            ].map((url, i) => (
+            {[side1_ss2, pin_cam2].map((url, i) => (
               <div key={i} className="aspect-square">
                 <ImageWithSkeleton
                   src={url}

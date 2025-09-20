@@ -7,6 +7,7 @@ import ProjectPage from "../pages/ProjectPage";
 import AnimationPage from "../pages/AnimationPage";
 import Latibule from "../pages/projects/Latibule/Latibule";
 import Learcult from "../pages/projects/Learcult/Learcult";
+import UniversityOrganizations from "../pages/projects/UniversityOrganizations/UniversityOrganizations";
 import IntroductoryTermPaper from "../pages/animation/IntroductoryTermPaper/FundamentalTopics";
 
 const CustomRouter = createBrowserRouter(
@@ -22,6 +23,7 @@ const CustomRouter = createBrowserRouter(
         { path: "animation", element: <AnimationPage /> },
         { path: "latibule", element: <Latibule /> },
         { path: "learcult", element: <Learcult /> },
+        { path: "uniProjects", element: <UniversityOrganizations /> },
         { path: "fundamentalTopics", element: <IntroductoryTermPaper /> },
       ],
     },

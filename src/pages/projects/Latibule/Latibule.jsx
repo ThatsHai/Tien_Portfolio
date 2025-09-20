@@ -33,6 +33,24 @@ const introduction =
 const contribution =
   "* Vice President of the Design Team. I created all of the following illustrations.";
 
+const ArrowButton = () => {
+  const handleClick = () => {
+    window.open(
+      "https://www.facebook.com/latibuleproject",
+      "_blank"
+    );
+  };
+
+  return (
+    <button
+      className="flex items-end px-4 border-2 text-defaultYellow rounded-full transition-all duration-300 hover:text-[#2B548C] hover:bg-defaultYellow mb-1 cursor-pointer"
+      onClick={handleClick}
+    >
+      <span className="text-lg">→</span>
+    </button>
+  );
+};
+
 const Jellyfish = () => {
   //Jellyfish logic
   const imgRef = useRef(null);
@@ -204,7 +222,10 @@ const Latibule = () => {
           />
         </div>
       </div>
-      <ProjectName text={projectName}></ProjectName>
+      <div className="flex items-end justify-center w-full gap-4">
+        <ProjectName text={projectName}></ProjectName>
+        <ArrowButton></ArrowButton>
+      </div>
       <ProjectCredit text={introduction}></ProjectCredit>
       <p className="text-center text-sm italic">{contribution}</p>
       <div className="py-8">
@@ -310,11 +331,7 @@ const Latibule = () => {
             </div>
 
             {/* Bottom 3 images side by side */}
-            {[
-              side3_ss2,
-              side4_ss2,
-              avatarFrame,
-            ].map((url, i) => (
+            {[side3_ss2, side4_ss2, avatarFrame].map((url, i) => (
               <div key={i} className="aspect-square">
                 <ImageWithSkeleton
                   src={url}
